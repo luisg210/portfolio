@@ -4,7 +4,7 @@ export const AboutPage = () => {
   return (
     <Box>
       <Typography mt={4} variant="h5">
-        En construcción...
+        En construcción... | Under construction...
       </Typography>
     </Box>
   );
