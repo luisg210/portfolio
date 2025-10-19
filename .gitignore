@@ -27,5 +27,14 @@ yarn-error.log*
 rt/
 todo.md
 
-/src/*
+/src/features
+/src/helpers
+/src/hooks
+/src/layouts
+/src/router
+/src/service
+/src/shared
+/src/store
+/src/types
+/src/utils
 
