@@ -29,7 +29,7 @@ git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 echo "Pushing to GitHub..."
-git push -f https://github.com:luisg210/portfolio.git gh-pages
+git push -f https://github.com/luisg210/portfolio.git gh-pages
 
 echo "cd -"
 cd -
