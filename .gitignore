@@ -26,6 +26,8 @@ yarn-error.log*
 
 todo.md
 
+.github/workflows/**copy**
+
 /src/features
 /src/helpers
 /src/hooks
