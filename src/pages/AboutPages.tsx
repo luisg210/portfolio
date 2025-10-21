@@ -2,9 +2,9 @@ import { Box, Typography } from '@mui/material';
 
 export const AboutPage = () => {
   return (
-    <Box>
+    <Box display="flex" justifyContent="center" alignContent="center">
       <Typography mt={4} variant="h5">
-        En construcción... | Under construction...
+        Under construction...
       </Typography>
     </Box>
   );
