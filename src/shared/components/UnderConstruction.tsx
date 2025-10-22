@@ -26,7 +26,7 @@ export const UnderContruction = () => {
         transition={{
           stiffness: 120,
           type: 'spring',
-          duration: 0.8,
+          duration: 0.9,
         }}
       >
         UNDER CONSTRUCTION
