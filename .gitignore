@@ -26,14 +26,10 @@ yarn-error.log*
 
 todo.md
 
-/src/features
-/src/helpers
 /src/hooks
-/src/layouts
 /src/router 
-/src/service
-/src/shared
-/src/store
-/src/types
-/src/utils
+/src/shared/components/**copy**
+/src/shared/hooks
+
+assets
 

@@ -1,8 +1,8 @@
 import './App.css';
-import { AboutPage } from './pages';
+import MainLayout from './layouts/MainLayout';
 
 function App() {
-  return <AboutPage />;
+  return <MainLayout />;
 }
 
 export default App;
