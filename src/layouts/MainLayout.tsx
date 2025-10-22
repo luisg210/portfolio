@@ -9,7 +9,7 @@ const MainLayout = () => {
       <Box component="div" sx={{ flexGrow: 1, p: 2 }}>
         {/* Espace for the app bar */}
         {/* <Toolbar /> */}
-        <MainTitle title="Porfolio Luis" />
+        <MainTitle title="Portfolio" />
 
         <Box component="main" mt={6}>
           <AboutMe />
