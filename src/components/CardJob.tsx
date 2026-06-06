@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography } from '@mui/material';
-import { JobsDescriptionType } from '@/utils';
+import { JobsDescriptionType } from '@/data/portfolio';
 
 type Props = {
   job: JobsDescriptionType;

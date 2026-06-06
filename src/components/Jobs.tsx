@@ -1,4 +1,4 @@
-import { jobsDescription } from '@/utils';
+import { jobsDescription } from '@/data/portfolio';
 import { CardJob } from './CardJob';
 
 export const Jobs = () => {

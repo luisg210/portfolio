@@ -24,12 +24,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log* 
 
-todo.md
-
-/src/hooks
-/src/router 
-/src/shared/components/**copy**
-/src/shared/hooks
-
-assets
-
