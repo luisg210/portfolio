@@ -1,11 +1,18 @@
-import { lazy, Suspense } from 'react';
 import { Box, Container, CssBaseline } from '@mui/material';
+import { motion } from 'framer-motion';
 import { Navbar } from '@/components/Navbar';
-import { Loading } from '@/components/Loader';
+import AboutMe from '@/components/AboutMe';
+import { Skills } from '@/components/Skills';
+import { Jobs } from '@/components/Jobs';
+import UnderContruction from '@/components/UnderConstruction';
+import { Footer } from '@/components/Footer';
 
-const AboutMe = lazy(() => import('@/components/AboutMe'));
-const UnderContruction = lazy(() => import('@/components/UnderConstruction'));
-const Footer = lazy(() => import('@/components/Footer'));
+const sectionReveal = {
+  initial: { opacity: 0, y: 60 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-100px' },
+  transition: { duration: 0.6 },
+};
 
 function App() {
   return (
@@ -13,14 +20,22 @@ function App() {
       <CssBaseline />
       <Navbar />
       <Container maxWidth="lg" sx={{ flex: 1, py: 4 }}>
-        <Suspense fallback={<Loading />}>
+        <motion.div {...sectionReveal}>
           <AboutMe />
+        </motion.div>
+        <motion.div {...sectionReveal}>
+          <Skills />
+        </motion.div>
+        <motion.div {...sectionReveal}>
+          <Jobs />
+        </motion.div>
+        <motion.div {...sectionReveal}>
           <UnderContruction />
-        </Suspense>
+        </motion.div>
       </Container>
-      <Suspense fallback={<Loading />}>
+      <motion.div {...sectionReveal}>
         <Footer />
-      </Suspense>
+      </motion.div>
     </Box>
   );
 }

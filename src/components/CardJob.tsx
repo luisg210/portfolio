@@ -7,9 +7,17 @@ type Props = {
 
 export const CardJob = ({ job }: Props) => {
   return (
-    <Card className="card">
+    <Card sx={{ mb: 2 }}>
       <CardContent>
-        <Typography variant="subtitle1">{job.title}</Typography>
+        <Typography variant="h6" fontWeight={600}>
+          {job.title}
+        </Typography>
+        <Typography variant="subtitle2" color="text.secondary" gutterBottom>
+          {job.at} &middot; {job.from} &mdash; {job.to}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {job.description}
+        </Typography>
       </CardContent>
     </Card>
   );
