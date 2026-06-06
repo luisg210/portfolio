@@ -24,18 +24,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log* 
 
-todo.md
-
-.github/workflows/**copy**
-
-/src/features
-/src/helpers
-/src/hooks
-/src/layouts
-/src/router 
-/src/service
-/src/shared
-/src/store
-/src/types
-/src/utils
-
+agents.md
