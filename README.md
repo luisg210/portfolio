@@ -31,14 +31,32 @@ También se puede publicar manualmente:
 npm run deploy
 ```
 
+## Secciones
+
+- **AboutMe** — Nombre + descripción y avatar circular.
+- **Skills** — Habilidades técnicas agrupadas por categoría (chips).
+- **Jobs** — Experiencia laboral (una tarjeta por empleo).
+- **Projects** — El proyecto más grande de cada empleo, resumido sin entrar en detalle.
+- **Services** — Servicios freelance + SaaS destacado (gestión de talleres multitenant).
+- **Footer** — Pie de página con copyright.
+
 ## Estructura
 
 ```
 src/
-├── main.tsx          Entry point (ThemeProvider)
-├── App.tsx           Componente raíz
-├── theme.ts          Tema oscuro MUI
-├── components/       Componentes de UI
-├── data/             Datos y contenido
-└── assets/           Imágenes y recursos estáticos
+├── main.tsx             Entry point (ThemeProvider)
+├── App.tsx              Componente raíz (layout inline + animaciones de sección)
+├── theme.ts             Tema oscuro MUI
+├── components/          Componentes de UI
+│   ├── Navbar.tsx       Logo como imagen, sin texto
+│   ├── AboutMe.tsx      Nombre + descripción + avatar circular
+│   ├── Skills.tsx       Habilidades por categoría como chips
+│   ├── Jobs.tsx         Experiencia laboral (CardJob por entrada)
+│   ├── CardJob.tsx      Tarjeta individual de experiencia
+│   ├── Services.tsx     Ofertas freelance + tarjeta SaaS destacada
+│   ├── Projects.tsx     Sección de proyectos (CardProject por entrada)
+│   ├── CardProject.tsx  Tarjeta individual de proyecto
+│   └── Footer.tsx       Pie de página
+├── data/                Datos y contenido (portfolio.ts)
+└── assets/              Imágenes y recursos estáticos
 ```
