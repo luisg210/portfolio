@@ -5,13 +5,13 @@ import AboutMe from '@/components/AboutMe';
 import { Skills } from '@/components/Skills';
 import { Jobs } from '@/components/Jobs';
 import Services from '@/components/Services';
-import UnderContruction from '@/components/UnderConstruction';
+import { Projects } from '@/components/Projects';
 import { Footer } from '@/components/Footer';
 
 const sectionReveal = {
   initial: { opacity: 0, y: 60 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-100px' },
+  viewport: { once: false, margin: '-100px' },
   transition: { duration: 0.6 },
 };
 
@@ -34,7 +34,7 @@ function App() {
           <Services />
         </motion.div>
         <motion.div {...sectionReveal}>
-          <UnderContruction />
+          <Projects />
         </motion.div>
       </Container>
       <motion.div {...sectionReveal}>

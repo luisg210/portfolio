@@ -39,7 +39,8 @@ src/
 │   ├── Jobs.tsx       Work experience (CardJob per entry)
 │   ├── CardJob.tsx    Single experience card
 │   ├── Services.tsx   Freelance offerings + featured SaaS card
-│   ├── UnderConstruction.tsx  Projects placeholder (link to notes app)
+│   ├── Projects.tsx   Projects section (CardProject per entry)
+│   ├── CardProject.tsx  Single project card (title, context, highlights)
 │   └── Footer.tsx     Footer with copyright
 ├── data/             Data / content (portfolio.ts)
 └── assets/           Static assets
@@ -51,6 +52,11 @@ src/
 
 - **Layout**: Flex row — left column (name h3 + description body1), right column (Avatar 140x140 circular)
 - **Description**: "Desarrollador Full-Stack con más de 3 años de experiencia creando soluciones tecnológicas para los sectores bancario y fintech. Especializado en React, TypeScript, Spring Boot y Python, con un enfoque en código limpio, arquitecturas mantenibles y resolución de problemas complejos."
+
+## Projects
+
+- **Content**: `data/portfolio.ts` — `projectsDescription`, one entry per role highlighting the biggest project without too much detail: Banco Agricola (ETLs multihilo + observability for cards/payments), Freelance (Taller SaaS multitenant), Serfinsa (payments SaaS with Visa Direct/Mastercard integrations + multitenant monitoring).
+- **Layout**: `components/Projects.tsx` — section title + responsive 2-col grid of `CardProject` (title, context with role/company, bullet-point highlights).
 
 ## Services
 

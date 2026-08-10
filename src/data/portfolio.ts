@@ -38,6 +38,38 @@ export const jobsDescription = [
 
 export type JobsDescriptionType = (typeof jobsDescription)[0];
 
+export const projectsDescription = [
+  {
+    title: 'ETLs transaccionales y observabilidad',
+    context: 'Banco Agricola · Analista de monitoreo',
+    highlights: [
+      'Creación de ETLs para alimentar dashboards transaccionales',
+      'Consultas multihilo hacia diferentes fuentes de datos',
+      'Observabilidad y monitoreo para tarjetas de crédito/débito y pagos en línea',
+    ],
+  },
+  {
+    title: 'Taller — SaaS multitenant para talleres mecánicos',
+    context: 'Freelance · Proyecto propio',
+    highlights: [
+      'SaaS completo de gestión de talleres, de la idea al despliegue en producción',
+      'Multitenancy con JWT, planes y branding por taller',
+      'Disponible como servicio en producción',
+    ],
+  },
+  {
+    title: 'SaaS para medios de pago',
+    context: 'Serfinsa · Full stack junior',
+    highlights: [
+      'Plataforma SaaS enfocada en medios de pago',
+      'Integraciones con Visa Direct y Mastercard',
+      'Multitenant de monitoreo',
+    ],
+  },
+];
+
+export type ProjectType = (typeof projectsDescription)[0];
+
 export const servicesDescription = [
   {
     title: 'Desarrollo full-stack a medida',
