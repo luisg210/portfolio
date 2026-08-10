@@ -295,44 +295,83 @@ export const servicesDescription: ServiceType[] = [
   },
 ];
 
-export const saasService = {
-  title: {
-    es: 'SaaS multitenant para gestión de talleres mecánicos',
-    en: 'Multitenant SaaS for auto workshop management',
-  },
-  description: {
-    es: 'Plataforma SaaS para la gestión integral de talleres: control de vehículos, clientes, empleados, órdenes de trabajo, movimientos y reportes. Cada taller se registra como un tenant independiente con su propio branding, plan y accesos, sin compartir datos con los demás.',
-    en: 'SaaS platform for end-to-end workshop management: vehicles, customers, employees, work orders, movements and reports. Each workshop registers as an independent tenant with its own branding, plan and access, without sharing data with the others.',
-  },
-  tech: 'Spring Boot 3 · Java 17 · PostgreSQL · JWT · React · Angular · TypeScript',
-  url: 'https://taller-web-o9yv.onrender.com/',
-  features: [
-    {
-      es: 'Multitenancy: cada taller es un tenant aislado con sus propios datos',
-      en: 'Multitenancy: each workshop is an isolated tenant with its own data',
-    },
-    {
-      es: 'Autenticación JWT con jerarquía de roles (ROOT, ADMIN, EMPLEADO_ADMIN, EMPLEADO)',
-      en: 'JWT authentication with role hierarchy (ROOT, ADMIN, EMPLEADO_ADMIN, EMPLEADO)',
-    },
-    {
-      es: 'Planes y módulos (BASIC / VIP) para activar funciones por tenant',
-      en: 'Plans and modules (BASIC / VIP) to enable features per tenant',
-    },
-    {
-      es: 'Branding por tenant: nombre, colores y logo personalizados',
-      en: 'Per-tenant branding: custom name, colors and logo',
-    },
-    {
-      es: 'Notificaciones automáticas por WhatsApp',
-      en: 'Automatic WhatsApp notifications',
-    },
-    {
-      es: 'Almacenamiento de imágenes en MinIO y reportes PDF',
-      en: 'Image storage in MinIO and PDF reports',
-    },
-  ],
+export type SaasServiceType = {
+  title: Localized;
+  description: Localized;
+  tech: string;
+  url?: string;
+  features: Localized[];
 };
+
+export const featuredSaas: SaasServiceType[] = [
+  {
+    title: {
+      es: 'SaaS multitenant para gestión de talleres mecánicos',
+      en: 'Multitenant SaaS for auto workshop management',
+    },
+    description: {
+      es: 'Plataforma SaaS para la gestión integral de talleres: control de vehículos, clientes, empleados, órdenes de trabajo, movimientos y reportes. Cada taller se registra como un tenant independiente con su propio branding, plan y accesos, sin compartir datos con los demás.',
+      en: 'SaaS platform for end-to-end workshop management: vehicles, customers, employees, work orders, movements and reports. Each workshop registers as an independent tenant with its own branding, plan and access, without sharing data with the others.',
+    },
+    tech: 'Spring Boot 3 · Java 17 · PostgreSQL · JWT · React · Angular · TypeScript',
+    url: 'https://taller-web-o9yv.onrender.com/',
+    features: [
+      {
+        es: 'Multitenancy: cada taller es un tenant aislado con sus propios datos',
+        en: 'Multitenancy: each workshop is an isolated tenant with its own data',
+      },
+      {
+        es: 'Autenticación JWT con jerarquía de roles (ROOT, ADMIN, EMPLEADO_ADMIN, EMPLEADO)',
+        en: 'JWT authentication with role hierarchy (ROOT, ADMIN, EMPLEADO_ADMIN, EMPLEADO)',
+      },
+      {
+        es: 'Planes y módulos (BASIC / VIP) para activar funciones por tenant',
+        en: 'Plans and modules (BASIC / VIP) to enable features per tenant',
+      },
+      {
+        es: 'Branding por tenant: nombre, colores y logo personalizados',
+        en: 'Per-tenant branding: custom name, colors and logo',
+      },
+      {
+        es: 'Notificaciones automáticas por WhatsApp',
+        en: 'Automatic WhatsApp notifications',
+      },
+      {
+        es: 'Almacenamiento de imágenes en MinIO y reportes PDF',
+        en: 'Image storage in MinIO and PDF reports',
+      },
+    ],
+  },
+  {
+    title: {
+      es: 'SaaS de pagos con Visa Direct y Mastercard Send',
+      en: 'Payments SaaS with Visa Direct and Mastercard Send',
+    },
+    description: {
+      es: 'Plataforma SaaS multitenant para el procesamiento de pagos y transferencias. Integra Visa Direct y Mastercard Send para mover dinero en tiempo real, con backend en Spring Boot y frontend en Angular. Incluye monitoreo multitenant de la infraestructura para garantizar la disponibilidad y el rendimiento del servicio.',
+      en: 'Multitenant SaaS platform for payment processing and transfers. Integrates Visa Direct and Mastercard Send to move money in real time, with a Spring Boot backend and Angular frontend. Includes multitenant infrastructure monitoring to guarantee service availability and performance.',
+    },
+    tech: 'Spring Boot 3 · Java · Angular · PostgreSQL · Visa Direct · Mastercard Send',
+    features: [
+      {
+        es: 'Integración con Visa Direct para transferencias en tiempo real',
+        en: 'Visa Direct integration for real-time transfers',
+      },
+      {
+        es: 'Integración con Mastercard Send para envío de dinero y pagos',
+        en: 'Mastercard Send integration for money movement and payouts',
+      },
+      {
+        es: 'Multitenancy con monitoreo de infraestructura por cliente',
+        en: 'Multitenancy with per-client infrastructure monitoring',
+      },
+      {
+        es: 'Backend con Spring Boot y frontend con Angular',
+        en: 'Spring Boot backend and Angular frontend',
+      },
+    ],
+  },
+];
 
 export type SkillsCategoryType = {
   label: Localized;

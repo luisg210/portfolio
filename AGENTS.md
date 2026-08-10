@@ -80,8 +80,8 @@ src/
 
 ## Services
 
-- **Content**: `data/portfolio.ts` — `servicesDescription` (4 freelance offers) + `saasService` (featured multitenant SaaS for auto workshops, built from the taller2 project: Spring Boot, JWT, plans/modules, per-tenant branding, WhatsApp, MinIO, PDF reports). Demo link points to `https://taller-web-o9yv.onrender.com/`.
-- **Layout**: `components/Services.tsx` — section title, full-width highlighted SaaS card (border `primary.main`, tech stack, feature list, link), then a responsive 2-col grid of service cards.
+- **Content**: `data/portfolio.ts` — `servicesDescription` (4 freelance offers) + `featuredSaas` (2 featured SaaS cards: a multitenant SaaS for auto workshops — built from the taller2 project: Spring Boot, JWT, plans/modules, per-tenant branding, WhatsApp, MinIO, PDF reports, demo at `https://taller-web-o9yv.onrender.com/` — and a payments SaaS integrating Visa Direct and Mastercard Send from the Serfinsa role).
+- **Layout**: `components/Services.tsx` — section title, full-width highlighted SaaS cards (border `primary.main`, tech stack, feature list, demo link when available, WhatsApp CTA), then a responsive 2-col grid of service cards.
 
 ## Deploy
 

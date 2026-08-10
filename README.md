@@ -37,7 +37,7 @@ npm run deploy
 - **AboutMe** — Nombre + rol, descripción bilingüe con años de experiencia dinámicos, avatar circular y CTAs (proyectos / contacto / CV).
 - **Skills** — Habilidades técnicas agrupadas por categoría (chips).
 - **Jobs** — Experiencia laboral (una tarjeta por empleo).
-- **Services** — Servicios freelance + SaaS destacado (gestión de talleres multitenant) con CTA de demo y WhatsApp.
+- **Services** — Servicios freelance + 2 SaaS destacados (gestión de talleres multitenant y pagos con Visa Direct/Mastercard Send) con CTA de demo y WhatsApp.
 - **Projects** — Proyectos destacados con capturas, enlazados a páginas de detalle (`/proyecto/:slug`).
 - **Education** — Educación y certificaciones.
 - **Blog** — Artículos con diálogo de lectura (contenido de ejemplo).

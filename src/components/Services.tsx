@@ -10,7 +10,7 @@ import {
   Typography,
 } from '@mui/material';
 import { pick } from '@/i18n';
-import { saasService, servicesDescription, whatsappLink } from '@/data/portfolio';
+import { featuredSaas, servicesDescription, whatsappLink } from '@/data/portfolio';
 import { useLanguage } from '@/context/LanguageContext';
 import { SectionHeading } from '@/components/SectionHeading';
 
@@ -22,69 +22,74 @@ const Services = () => {
     <Box id="services" sx={{ mt: 6, scrollMarginTop: 88 }}>
       <SectionHeading title={t('sections.services')} />
 
-      <Card
-        sx={{
-          mb: 3,
-          border: '1px solid',
-          borderColor: 'primary.main',
-          bgcolor: 'background.paper',
-        }}
-      >
-        <CardContent>
-          <Typography variant="h6" fontWeight={600} gutterBottom>
-            {pick(saasService.title, lang)}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-            {pick(saasService.description, lang)}
-          </Typography>
-          <Typography variant="subtitle2" color="primary" gutterBottom>
-            Stack: {saasService.tech}
-          </Typography>
-          <List dense disablePadding>
-            {saasService.features.map(feature => (
-              <ListItem key={feature.es} disableGutters disablePadding>
-                <Box
-                  sx={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: '50%',
-                    bgcolor: 'primary.main',
-                    mr: 1.5,
-                    mt: 1,
-                    flexShrink: 0,
-                  }}
-                />
-                <ListItemText
-                  primary={pick(feature, lang)}
-                  primaryTypographyProps={{ variant: 'body2' }}
-                />
-              </ListItem>
-            ))}
-          </List>
-          <Stack direction="row" spacing={1.5} sx={{ mt: 2, flexWrap: 'wrap' }}>
-            <Button
-              variant="contained"
-              color="primary"
-              href={saasService.url}
-              target="_blank"
-              rel="noreferrer"
-              size="small"
-            >
-              {t('projects.viewDemo')}
-            </Button>
-            <Button
-              variant="outlined"
-              color="success"
-              href={whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              size="small"
-            >
-              {t('contact.whatsapp')}
-            </Button>
-          </Stack>
-        </CardContent>
-      </Card>
+      {featuredSaas.map(saas => (
+        <Card
+          key={saas.title.es}
+          sx={{
+            mb: 3,
+            border: '1px solid',
+            borderColor: 'primary.main',
+            bgcolor: 'background.paper',
+          }}
+        >
+          <CardContent>
+            <Typography variant="h6" fontWeight={600} gutterBottom>
+              {pick(saas.title, lang)}
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              {pick(saas.description, lang)}
+            </Typography>
+            <Typography variant="subtitle2" color="primary" gutterBottom>
+              Stack: {saas.tech}
+            </Typography>
+            <List dense disablePadding>
+              {saas.features.map(feature => (
+                <ListItem key={feature.es} disableGutters disablePadding>
+                  <Box
+                    sx={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: '50%',
+                      bgcolor: 'primary.main',
+                      mr: 1.5,
+                      mt: 1,
+                      flexShrink: 0,
+                    }}
+                  />
+                  <ListItemText
+                    primary={pick(feature, lang)}
+                    primaryTypographyProps={{ variant: 'body2' }}
+                  />
+                </ListItem>
+              ))}
+            </List>
+            <Stack direction="row" spacing={1.5} sx={{ mt: 2, flexWrap: 'wrap' }}>
+              {saas.url && (
+                <Button
+                  variant="contained"
+                  color="primary"
+                  href={saas.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  size="small"
+                >
+                  {t('projects.viewDemo')}
+                </Button>
+              )}
+              <Button
+                variant="outlined"
+                color="success"
+                href={whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                size="small"
+              >
+                {t('contact.whatsapp')}
+              </Button>
+            </Stack>
+          </CardContent>
+        </Card>
+      ))}
 
       <Box
         sx={{
