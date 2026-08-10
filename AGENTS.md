@@ -20,8 +20,11 @@ No typecheck script exists — run `npx tsc --noEmit` manually if needed.
 - **Path alias**: `@/` → `src/` (Vite + tsconfig `paths`)
 - **Formatting**: Prettier — `semi`, `singleQuote`, `printWidth 100`, `tabWidth 2`, `trailingComma "es5"`, `arrowParens "avoid"`
 - **Lint**: Flat `eslint.config.js`, TS parser + React + import ordering (`builtin > external > internal`)
-- **UI**: MUI v7 (`@mui/material`, `@emotion/react`)
+- **UI**: MUI v7 (`@mui/material`, `@mui/icons-material`, `@emotion/react`)
 - **Animation**: `framer-motion`
+- **Routing**: `react-router-dom` (BrowserRouter, `basename="/portfolio"`; SPA fallback via `public/404.html`)
+- **i18n**: Custom lightweight `LanguageContext` + `src/i18n.ts` (`t(key)` + `pick(Localized, lang)`). Content data in `src/data/portfolio.ts` is bilingual (`{ es, en }`).
+- **Theme**: `ThemeModeContext` toggles light/dark, persisted in localStorage.
 - **Clean code / SOLID**: Single-responsibility components, small focused functions, composition over inheritance, dependency injection via props/hooks, clear separation of concerns.
 - **Component size**: Prefer many small components over few large ones. Extract UI primitives, layout wrappers, and logic hooks.
 
@@ -29,29 +32,47 @@ No typecheck script exists — run `npx tsc --noEmit` manually if needed.
 
 ```
 src/
-├── main.tsx          Entry point (ThemeProvider wrapper)
-├── App.tsx           Root component (inline layout)
-├── theme.ts          MUI dark theme config
+├── main.tsx          Entry (providers: Language → ThemeMode → BrowserRouter)
+├── App.tsx           Layout + routes (`/`, `/proyecto/:slug`); lazy ProjectDetail
+├── theme.ts          `getTheme(mode)` light/dark palettes
+├── i18n.ts           Bilingual messages + `pick()` / `t()` helpers
+├── context/          LanguageContext, ThemeModeContext
+├── hooks/            useScrollSpy, useSeo
+├── lib/              scroll.ts (scrollToId)
+├── pages/
+│   ├── Home.tsx          All sections with framer-motion reveal
+│   └── ProjectDetail.tsx Detail page (gallery Lightbox, tech chips, related projects)
 ├── components/       All UI components
-│   ├── Navbar.tsx     Logo (logov1.png) as image, no text
-│   ├── AboutMe.tsx    Name + description (left) + circular avatar (right)
+│   ├── Navbar.tsx     Logo, section links (scrollspy), theme/lang toggles, socials, mobile drawer
+│   ├── AboutMe.tsx    Name + role + description + CTAs (projects / contact / CV)
 │   ├── Skills.tsx     Tech skills grouped by category as chips
 │   ├── Jobs.tsx       Work experience (CardJob per entry)
 │   ├── CardJob.tsx    Single experience card
-│   ├── Services.tsx   Freelance offerings + featured SaaS card
-│   ├── Projects.tsx   Projects section (CardProject per entry)
-│   ├── CardProject.tsx  Single project card (title, context, highlights)
-│   └── Footer.tsx     Footer with copyright
-├── data/             Data / content (portfolio.ts)
-└── assets/           Static assets
+│   ├── Services.tsx   Freelance offerings + featured SaaS card (demo + WhatsApp CTA)
+│   ├── Projects.tsx   Projects grid (CardProject per entry)
+│   ├── CardProject.tsx  Card with screenshot, highlights, detail/demo buttons
+│   ├── Education.tsx  Degrees + certifications
+│   ├── Testimonials.tsx  Quote cards (placeholder content)
+│   ├── Blog.tsx       Post cards + reading Dialog (placeholder content)
+│   ├── Contact.tsx    Mailto form + WhatsApp (wa.me/50360653681) + socials
+│   ├── Lightbox.tsx   Gallery dialog for project screenshots
+│   ├── ScrollToTopButton.tsx  Floating FAB
+│   ├── SectionHeading.tsx  Reusable section title
+│   ├── icons.tsx      Inline SVGs: GitHub, LinkedIn, WhatsApp
+│   └── Footer.tsx     Quick links, socials, copyright
+├── data/             Data / content (portfolio.ts, bilingual)
+└── assets/
     ├── logov1.png     Navbar logo + AboutMe avatar + favicon
-    └── logov2.png     Unused
+    ├── logov2.png     Unused
+    └── screenshots/   Per-project placeholder SVGs (replace with real captures)
 ```
+
+`public/` also holds `cv.pdf` (placeholder), `robots.txt`, `sitemap.xml`, and `404.html` (SPA deep-link redirect).
 
 ## AboutMe
 
-- **Layout**: Flex row — left column (name h3 + description body1), right column (Avatar 140x140 circular)
-- **Description**: "Desarrollador Full-Stack con más de 3 años de experiencia creando soluciones tecnológicas para los sectores bancario y fintech. Especializado en React, TypeScript, Spring Boot y Python, con un enfoque en código limpio, arquitecturas mantenibles y resolución de problemas complejos."
+- **Layout**: Flex row — left column (name h3 + role + description body1 + CTAs), right column (Avatar 140x140 circular)
+- **Description**: Bilingual in `src/i18n.ts` (`about.description`) with `{years}` computed dynamically from July 2023.
 
 ## Projects
 

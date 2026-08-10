@@ -1,13 +1,15 @@
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { projectsDescription } from '@/data/portfolio';
+import { useLanguage } from '@/context/LanguageContext';
+import { SectionHeading } from '@/components/SectionHeading';
 import { CardProject } from './CardProject';
 
 export const Projects = () => {
+  const { t } = useLanguage();
+
   return (
-    <Box sx={{ mt: 6 }}>
-      <Typography variant="h4" align="center" gutterBottom>
-        Proyectos
-      </Typography>
+    <Box id="projects" sx={{ mt: 6, scrollMarginTop: 88 }}>
+      <SectionHeading title={t('sections.projects')} />
       <Box
         sx={{
           display: 'grid',
@@ -16,7 +18,7 @@ export const Projects = () => {
         }}
       >
         {projectsDescription.map(project => (
-          <CardProject key={project.title} project={project} />
+          <CardProject key={project.slug} project={project} />
         ))}
       </Box>
     </Box>

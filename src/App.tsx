@@ -1,45 +1,38 @@
-import { Box, Container, CssBaseline } from '@mui/material';
-import { motion } from 'framer-motion';
+import { lazy, Suspense, useEffect } from 'react';
+import { Box, CssBaseline } from '@mui/material';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
-import AboutMe from '@/components/AboutMe';
-import { Skills } from '@/components/Skills';
-import { Jobs } from '@/components/Jobs';
-import Services from '@/components/Services';
-import { Projects } from '@/components/Projects';
 import { Footer } from '@/components/Footer';
+import { ScrollToTopButton } from '@/components/ScrollToTopButton';
+import { Home } from '@/pages/Home';
 
-const sectionReveal = {
-  initial: { opacity: 0, y: 60 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: false, margin: '-100px' },
-  transition: { duration: 0.6 },
-};
+const ProjectDetail = lazy(() =>
+  import('@/pages/ProjectDetail').then(module => ({ default: module.ProjectDetail }))
+);
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const scrollTo = (location.state as { scrollTo?: string } | null)?.scrollTo;
+    if (!scrollTo) window.scrollTo(0, 0);
+  }, [location.pathname, location.state]);
+
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
       <CssBaseline />
       <Navbar />
-      <Container maxWidth="lg" sx={{ flex: 1, py: 4 }}>
-        <motion.div {...sectionReveal}>
-          <AboutMe />
-        </motion.div>
-        <motion.div {...sectionReveal}>
-          <Skills />
-        </motion.div>
-        <motion.div {...sectionReveal}>
-          <Jobs />
-        </motion.div>
-        <motion.div {...sectionReveal}>
-          <Services />
-        </motion.div>
-        <motion.div {...sectionReveal}>
-          <Projects />
-        </motion.div>
-      </Container>
-      <motion.div {...sectionReveal}>
-        <Footer />
-      </motion.div>
+      <Box component="main" sx={{ flex: 1 }}>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/proyecto/:slug" element={<ProjectDetail />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Suspense>
+      </Box>
+      <Footer />
+      <ScrollToTopButton />
     </Box>
   );
 }

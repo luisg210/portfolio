@@ -1,12 +1,26 @@
-import { Box, Card, CardContent, List, ListItem, ListItemText, Typography } from '@mui/material';
-import { saasService, servicesDescription } from '@/data/portfolio';
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  List,
+  ListItem,
+  ListItemText,
+  Stack,
+  Typography,
+} from '@mui/material';
+import { pick } from '@/i18n';
+import { saasService, servicesDescription, whatsappLink } from '@/data/portfolio';
+import { useLanguage } from '@/context/LanguageContext';
+import { SectionHeading } from '@/components/SectionHeading';
 
 const Services = () => {
+  const { lang, t } = useLanguage();
+  const whatsappUrl = whatsappLink(t('whatsapp.message'));
+
   return (
-    <Box sx={{ mt: 6 }}>
-      <Typography variant="h4" align="center" gutterBottom>
-        Servicios
-      </Typography>
+    <Box id="services" sx={{ mt: 6, scrollMarginTop: 88 }}>
+      <SectionHeading title={t('sections.services')} />
 
       <Card
         sx={{
@@ -18,17 +32,17 @@ const Services = () => {
       >
         <CardContent>
           <Typography variant="h6" fontWeight={600} gutterBottom>
-            {saasService.title}
+            {pick(saasService.title, lang)}
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-            {saasService.description}
+            {pick(saasService.description, lang)}
           </Typography>
           <Typography variant="subtitle2" color="primary" gutterBottom>
             Stack: {saasService.tech}
           </Typography>
           <List dense disablePadding>
             {saasService.features.map(feature => (
-              <ListItem key={feature} disableGutters disablePadding>
+              <ListItem key={feature.es} disableGutters disablePadding>
                 <Box
                   sx={{
                     width: 6,
@@ -41,24 +55,34 @@ const Services = () => {
                   }}
                 />
                 <ListItemText
-                  primary={feature}
+                  primary={pick(feature, lang)}
                   primaryTypographyProps={{ variant: 'body2' }}
                 />
               </ListItem>
             ))}
           </List>
-          <Box sx={{ mt: 2 }}>
-            <Typography
-              component="a"
+          <Stack direction="row" spacing={1.5} sx={{ mt: 2, flexWrap: 'wrap' }}>
+            <Button
+              variant="contained"
+              color="primary"
               href={saasService.url}
               target="_blank"
               rel="noreferrer"
-              color="primary"
-              sx={{ textDecoration: 'none', '&:hover': { color: 'secondary.main' } }}
+              size="small"
             >
-              Ver demo en producción
-            </Typography>
-          </Box>
+              {t('projects.viewDemo')}
+            </Button>
+            <Button
+              variant="outlined"
+              color="success"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              size="small"
+            >
+              {t('contact.whatsapp')}
+            </Button>
+          </Stack>
         </CardContent>
       </Card>
 
@@ -70,13 +94,13 @@ const Services = () => {
         }}
       >
         {servicesDescription.map(service => (
-          <Card key={service.title}>
+          <Card key={service.title.es}>
             <CardContent>
               <Typography variant="h6" fontWeight={600} gutterBottom>
-                {service.title}
+                {pick(service.title, lang)}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {service.description}
+                {pick(service.description, lang)}
               </Typography>
             </CardContent>
           </Card>
