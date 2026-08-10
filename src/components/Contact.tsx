@@ -72,7 +72,13 @@ const Contact = () => {
             {t('contact.orWrite')}
           </Typography>
 
-          <Stack direction="row" spacing={1.5} justifyContent="center" flexWrap="wrap">
+          <Stack
+            direction="row"
+            spacing={1.5}
+            justifyContent="center"
+            flexWrap="wrap"
+            sx={{ '& .MuiButton-root': { mb: { xs: 2, sm: 0 } } }}
+          >
             <Button
               variant="outlined"
               color="success"

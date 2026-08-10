@@ -8,7 +8,7 @@ import saasShot2 from '@/assets/screenshots/saas-2.svg';
 
 export const profile = {
   name: 'Luis Henriquez',
-  email: 'luisgerr23000@outlook.com',
+  email: 'luis.developer1@outlook.com',
   github: 'https://github.com/luisg210',
   linkedin: 'https://www.linkedin.com/in/luis-h-2000112345354564644566456353/',
   whatsappNumber: '50360653681',
