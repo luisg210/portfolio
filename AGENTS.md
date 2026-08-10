@@ -52,7 +52,6 @@ src/
 │   ├── Projects.tsx   Projects grid (CardProject per entry)
 │   ├── CardProject.tsx  Card with screenshot, highlights, detail/demo buttons
 │   ├── Education.tsx  Degrees + certifications
-│   ├── Testimonials.tsx  Quote cards (placeholder content)
 │   ├── Blog.tsx       Post cards + reading Dialog (placeholder content)
 │   ├── Contact.tsx    Mailto form + WhatsApp (wa.me/50360653681) + socials
 │   ├── Lightbox.tsx   Gallery dialog for project screenshots

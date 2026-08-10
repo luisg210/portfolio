@@ -8,9 +8,9 @@ import saasShot2 from '@/assets/screenshots/saas-2.svg';
 
 export const profile = {
   name: 'Luis Henriquez',
-  email: 'luis.henriquez.dev@gmail.com',
+  email: 'luisgerr23000@outlook.com',
   github: 'https://github.com/luisg210',
-  linkedin: 'https://www.linkedin.com/in/luis-henriquez',
+  linkedin: 'https://www.linkedin.com/in/luis-h-2000112345354564644566456353/',
   whatsappNumber: '50360653681',
   cvPath: `${import.meta.env.BASE_URL}cv.pdf`,
 };
@@ -179,12 +179,6 @@ export const educationDescription: EducationType[] = [
     kind: 'degree',
   },
   {
-    title: { es: 'Certificación Java (OCA)', en: 'Java Certification (OCA)' },
-    institution: 'Oracle',
-    from: '2022',
-    kind: 'certification',
-  },
-  {
     title: { es: 'Spring Boot y microservicios', en: 'Spring Boot & microservices' },
     institution: 'Udemy',
     from: '2024',
@@ -195,39 +189,6 @@ export const educationDescription: EducationType[] = [
     institution: 'Udemy',
     from: '2025',
     kind: 'certification',
-  },
-];
-
-export type TestimonialType = {
-  quote: Localized;
-  author: string;
-  role: Localized;
-};
-
-export const testimonialsDescription: TestimonialType[] = [
-  {
-    quote: {
-      es: 'Entregó el sistema antes de lo previsto y el resultado superó nuestras expectativas. Muy atento a los detalles y con excelente comunicación.',
-      en: 'He delivered the system ahead of schedule and the result exceeded our expectations. Very detail-oriented with excellent communication.',
-    },
-    author: 'Cliente A',
-    role: { es: 'CEO · Taller mecánico', en: 'CEO · Auto workshop' },
-  },
-  {
-    quote: {
-      es: 'Un desarrollador muy completo: no solo codifica, también entiende el negocio y propone mejoras reales.',
-      en: 'A very complete developer: he not only codes, he also understands the business and proposes real improvements.',
-    },
-    author: 'Cliente B',
-    role: { es: 'Product Manager · Fintech', en: 'Product Manager · Fintech' },
-  },
-  {
-    quote: {
-      es: 'Gran capacidad para resolver problemas complejos en entornos críticos. Aportó valor desde el primer día.',
-      en: 'Great ability to solve complex problems in critical environments. He brought value from day one.',
-    },
-    author: 'Cliente C',
-    role: { es: 'Líder técnico · Banca', en: 'Tech Lead · Banking' },
   },
 ];
 

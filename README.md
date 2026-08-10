@@ -40,7 +40,6 @@ npm run deploy
 - **Services** — Servicios freelance + SaaS destacado (gestión de talleres multitenant) con CTA de demo y WhatsApp.
 - **Projects** — Proyectos destacados con capturas, enlazados a páginas de detalle (`/proyecto/:slug`).
 - **Education** — Educación y certificaciones.
-- **Testimonials** — Testimonios (contenido de ejemplo).
 - **Blog** — Artículos con diálogo de lectura (contenido de ejemplo).
 - **Contact** — Formulario (mailto) + WhatsApp (`wa.me/50360653681`) + redes.
 - **Footer** — Enlaces rápidos, redes y copyright.
@@ -69,7 +68,7 @@ src/
 │   ├── Home.tsx             Todas las secciones con reveal animado
 │   └── ProjectDetail.tsx    Detalle de proyecto (galería, tech, relacionados)
 ├── components/          Componentes de UI (Navbar, AboutMe, Skills, Jobs, Services,
-│                        Projects, Education, Testimonials, Blog, Contact, Lightbox, ...)
+│                        Projects, Education, Blog, Contact, Lightbox, ...)
 ├── data/                Datos y contenido bilingüe (portfolio.ts)
 └── assets/              Imágenes, logo y capturas de proyectos
 ```

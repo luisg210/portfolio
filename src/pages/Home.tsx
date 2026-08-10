@@ -11,7 +11,6 @@ import { Jobs } from '@/components/Jobs';
 import Services from '@/components/Services';
 import { Projects } from '@/components/Projects';
 import { Education } from '@/components/Education';
-import { Testimonials } from '@/components/Testimonials';
 import { Blog } from '@/components/Blog';
 import Contact from '@/components/Contact';
 
@@ -55,9 +54,6 @@ export const Home = () => {
       </motion.div>
       <motion.div {...sectionReveal}>
         <Education />
-      </motion.div>
-      <motion.div {...sectionReveal}>
-        <Testimonials />
       </motion.div>
       <motion.div {...sectionReveal}>
         <Blog />
