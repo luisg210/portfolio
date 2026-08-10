@@ -37,3 +37,42 @@ export const jobsDescription = [
 ];
 
 export type JobsDescriptionType = (typeof jobsDescription)[0];
+
+export const servicesDescription = [
+  {
+    title: 'Desarrollo full-stack a medida',
+    description:
+      'Construcción de aplicaciones web completas, desde la interfaz hasta la base de datos, usando React, TypeScript y Angular en el frontend y Spring Boot o Node.js en el backend, con foco en código limpio y arquitecturas mantenibles.',
+  },
+  {
+    title: 'APIs REST y microservicios',
+    description:
+      'Diseño e implementación de APIs RESTful seguras con autenticación JWT, jerarquía de roles, validación, documentación con Swagger y patrones de dominio como DTOs y mapeadores MapStruct.',
+  },
+  {
+    title: 'Despliegue y DevOps',
+    description:
+      'Containerización con Docker, despliegues en producción, integración continua con GitHub Actions y monitoreo con herramientas como Grafana y OpenTelemetry para garantizar la disponibilidad de los sistemas.',
+  },
+  {
+    title: 'Soporte y mantenimiento',
+    description:
+      'Evolución de sistemas existentes: corrección de bugs, incorporación de nuevas funcionalidades, refactorización de código heredado y mejoras de rendimiento.',
+  },
+];
+
+export const saasService = {
+  title: 'SaaS multitenant para gestión de talleres mecánicos',
+  description:
+    'Plataforma SaaS para la gestión integral de talleres: control de vehículos, clientes, empleados, órdenes de trabajo, movimientos y reportes. Cada taller se registra como un tenant independiente con su propio branding, plan y accesos, sin compartir datos con los demás.',
+  tech: 'Spring Boot 3 · Java 17 · PostgreSQL · JWT · React · Angular · TypeScript',
+  url: 'https://taller-web-o9yv.onrender.com/',
+  features: [
+    'Multitenancy: cada taller es un tenant aislado con sus propios datos',
+    'Autenticación JWT con jerarquía de roles (ROOT, ADMIN, EMPLEADO_ADMIN, EMPLEADO)',
+    'Planes y módulos (BASIC / VIP) para activar funciones por tenant',
+    'Branding por tenant: nombre, colores y logo personalizados',
+    'Notificaciones automáticas por WhatsApp',
+    'Almacenamiento de imágenes en MinIO y reportes PDF',
+  ],
+};

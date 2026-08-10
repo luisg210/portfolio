@@ -4,6 +4,7 @@ import { Navbar } from '@/components/Navbar';
 import AboutMe from '@/components/AboutMe';
 import { Skills } from '@/components/Skills';
 import { Jobs } from '@/components/Jobs';
+import Services from '@/components/Services';
 import UnderContruction from '@/components/UnderConstruction';
 import { Footer } from '@/components/Footer';
 
@@ -28,6 +29,9 @@ function App() {
         </motion.div>
         <motion.div {...sectionReveal}>
           <Jobs />
+        </motion.div>
+        <motion.div {...sectionReveal}>
+          <Services />
         </motion.div>
         <motion.div {...sectionReveal}>
           <UnderContruction />
