@@ -50,7 +50,7 @@ src/
 │   ├── CardJob.tsx    Single experience card
 │   ├── Services.tsx   Freelance offerings + featured SaaS card (demo + WhatsApp CTA)
 │   ├── Projects.tsx   Projects grid (CardProject per entry)
-│   ├── CardProject.tsx  Card with screenshot, highlights, detail/demo buttons
+│   ├── CardProject.tsx  Card with screenshot, short description, detail/demo buttons
 │   ├── Education.tsx  Degrees + certifications
 │   ├── Blog.tsx       Post cards + reading Dialog (placeholder content)
 │   ├── Contact.tsx    Mailto form + WhatsApp (wa.me/50360653681) + socials
@@ -75,8 +75,8 @@ src/
 
 ## Projects
 
-- **Content**: `data/portfolio.ts` — `projectsDescription`, one entry per role highlighting the biggest project without too much detail: Banco Agricola (ETLs multihilo + observability for cards/payments), Freelance (Taller SaaS multitenant), Serfinsa (payments SaaS with Visa Direct/Mastercard integrations + multitenant monitoring).
-- **Layout**: `components/Projects.tsx` — section title + responsive 2-col grid of `CardProject` (title, context with role/company, bullet-point highlights).
+- **Content**: `data/portfolio.ts` — `projectsDescription`, one entry per role highlighting the biggest project without too much detail: Banco Agricola (ETLs multihilo + observability for cards/payments), Freelance (Taller SaaS multitenant), Serfinsa (payments SaaS with Visa Direct/Mastercard integrations + multitenant monitoring). Each entry has a `shortDescription` (1-line bilingual summary) plus the full `longDescription` used on the detail page.
+- **Layout**: `components/Projects.tsx` — section title + responsive 2-col grid of `CardProject` (title, context with role/company, short description, detail/demo buttons).
 
 ## Services
 

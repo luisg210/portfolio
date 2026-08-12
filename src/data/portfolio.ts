@@ -73,6 +73,7 @@ export type ProjectType = {
   slug: string;
   title: Localized;
   context: Localized;
+  shortDescription: Localized;
   highlights: Localized[];
   longDescription: Localized;
   tech: string[];
@@ -90,6 +91,10 @@ export const projectsDescription: ProjectType[] = [
     context: {
       es: 'Banco Agricola · Analista de monitoreo',
       en: 'Banco Agricola · Monitoring Analyst',
+    },
+    shortDescription: {
+      es: 'ETLs en Python y observabilidad para tarjetas y pagos en línea.',
+      en: 'Python ETLs and observability for cards and online payments.',
     },
     highlights: [
       {
@@ -119,6 +124,10 @@ export const projectsDescription: ProjectType[] = [
       en: 'Taller — Multitenant SaaS for auto workshops',
     },
     context: { es: 'Freelance · Proyecto propio', en: 'Freelance · Own project' },
+    shortDescription: {
+      es: 'SaaS multitenant para gestionar talleres mecánicos, en producción.',
+      en: 'Multitenant SaaS for managing auto workshops, live in production.',
+    },
     highlights: [
       {
         es: 'SaaS completo de gestión de talleres, de la idea al despliegue en producción',
@@ -142,6 +151,10 @@ export const projectsDescription: ProjectType[] = [
     slug: 'saas-pagos',
     title: { es: 'SaaS para medios de pago', en: 'Payments SaaS' },
     context: { es: 'Serfinsa · Full stack junior', en: 'Serfinsa · Junior full-stack' },
+    shortDescription: {
+      es: 'Plataforma SaaS de medios de pago con Visa Direct y Mastercard.',
+      en: 'Payments SaaS platform with Visa Direct and Mastercard.',
+    },
     highlights: [
       {
         es: 'Plataforma SaaS enfocada en medios de pago',

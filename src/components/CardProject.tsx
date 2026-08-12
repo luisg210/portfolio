@@ -4,9 +4,6 @@ import {
   Card,
   CardContent,
   CardMedia,
-  List,
-  ListItem,
-  ListItemText,
   Stack,
   Typography,
 } from '@mui/material';
@@ -41,27 +38,9 @@ export const CardProject = ({ project }: Props) => {
         <Typography variant="subtitle2" color="primary" gutterBottom>
           {pick(project.context, lang)}
         </Typography>
-        <List dense disablePadding>
-          {project.highlights.map(highlight => (
-            <ListItem key={highlight.es} disableGutters disablePadding>
-              <Box
-                sx={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: '50%',
-                  bgcolor: 'primary.main',
-                  mr: 1.5,
-                  mt: 1,
-                  flexShrink: 0,
-                }}
-              />
-              <ListItemText
-                primary={pick(highlight, lang)}
-                primaryTypographyProps={{ variant: 'body2' }}
-              />
-            </ListItem>
-          ))}
-        </List>
+        <Typography variant="body2" color="text.secondary">
+          {pick(project.shortDescription, lang)}
+        </Typography>
       </CardContent>
       <Box sx={{ p: 2, pt: 0, mt: 'auto' }}>
         <Stack direction="row" spacing={1} flexWrap="wrap">
