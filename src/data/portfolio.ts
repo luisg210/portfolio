@@ -460,7 +460,7 @@ export const skillsCategories: SkillsCategoryType[] = [
     skills: [
       { name: 'Spring Boot' },
       { name: 'Java' },
-      { name: '.NET', level: { es: 'Intermedio', en: 'Intermediate' } },
+      { name: '.NET' },
       { name: 'Node.js' },
       { name: 'Python' },
       { name: 'REST APIs' },
