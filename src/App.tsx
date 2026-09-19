@@ -1,26 +1,38 @@
-import { lazy, Suspense } from 'react';
-import { Box, Container, CssBaseline } from '@mui/material';
+import { lazy, Suspense, useEffect } from 'react';
+import { Box, CssBaseline } from '@mui/material';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
-import { Loading } from '@/components/Loader';
+import { Footer } from '@/components/Footer';
+import { ScrollToTopButton } from '@/components/ScrollToTopButton';
+import { Home } from '@/pages/Home';
 
-const AboutMe = lazy(() => import('@/components/AboutMe'));
-const UnderContruction = lazy(() => import('@/components/UnderConstruction'));
-const Footer = lazy(() => import('@/components/Footer'));
+const ProjectDetail = lazy(() =>
+  import('@/pages/ProjectDetail').then(module => ({ default: module.ProjectDetail }))
+);
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const scrollTo = (location.state as { scrollTo?: string } | null)?.scrollTo;
+    if (!scrollTo) window.scrollTo(0, 0);
+  }, [location.pathname, location.state]);
+
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
       <CssBaseline />
       <Navbar />
-      <Container maxWidth="lg" sx={{ flex: 1, py: 4 }}>
-        <Suspense fallback={<Loading />}>
-          <AboutMe />
-          <UnderContruction />
+      <Box component="main" sx={{ flex: 1 }}>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/proyecto/:slug" element={<ProjectDetail />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
         </Suspense>
-      </Container>
-      <Suspense fallback={<Loading />}>
-        <Footer />
-      </Suspense>
+      </Box>
+      <Footer />
+      <ScrollToTopButton />
     </Box>
   );
 }

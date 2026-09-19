@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="hsl(190, 80%, 16%)"/>
+      <stop offset="1" stop-color="#101014"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="40" width="300" height="16" rx="8" fill="hsl(190, 90%, 45%)" opacity="0.9"/>
+  <rect x="60" y="70" width="220" height="10" rx="5" fill="#ffffff" opacity="0.18"/>
+  <rect x="60" y="120" width="1080" height="340" rx="12" fill="#ffffff" opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+  <rect x="90" y="150" width="520" height="18" rx="9" fill="hsl(190, 90%, 45%)"/>
+  <rect x="90" y="182" width="360" height="12" rx="6" fill="#ffffff" opacity="0.5"/>
+  <rect x="90" y="206" width="420" height="12" rx="6" fill="#ffffff" opacity="0.28"/>
+  <rect x="90" y="250" width="520" height="12" rx="6" fill="#ffffff" opacity="0.5"/>
+  <rect x="90" y="274" width="300" height="12" rx="6" fill="#ffffff" opacity="0.28"/>
+  <rect x="90" y="298" width="470" height="12" rx="6" fill="#ffffff" opacity="0.5"/>
+  <rect x="655" y="150" width="420" height="190" rx="12" fill="#ffffff" opacity="0.08" stroke="hsl(190, 90%, 55%)" stroke-opacity="0.6"/>
+  <text x="865" y="205" text-anchor="middle" font-size="24" font-weight="700" fill="hsl(190, 90%, 72%)">Sello recibido · ok</text>
+  <text x="865" y="240" text-anchor="middle" font-size="18" fill="#ffffff" opacity="0.8">código de validación · QR/PDF417</text>
+  <text x="865" y="286" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.5">RSA-SHA256 · DTE FACTURA</text>
+  <text x="600" y="556" text-anchor="middle" font-size="34" font-weight="700" fill="#ffffff">API de facturación electrónica FEL</text>
+  <text x="600" y="592" text-anchor="middle" font-size="20" fill="#ffffff" opacity="0.55">Spring Boot 4 · Java 25 · DTE construido, firmado y transmitido</text>
+</svg>

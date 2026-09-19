@@ -1,0 +1,52 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 1495 >>
+stream
+BT /F1 24 Tf 72 740 Td (LUIS HENRIQUEZ) Tj ET
+BT /F1 13 Tf 72 716 Td (Full Stack Developer) Tj ET
+BT /F1 10 Tf 72 700 Td (React | TypeScript | Spring Boot | Python) Tj ET
+BT /F1 10 Tf 72 686 Td (Email: luis.henriquez.dev@gmail.com) Tj ET
+BT /F1 10 Tf 72 672 Td (Github: github.com/luisg210) Tj ET
+BT /F1 14 Tf 72 636 Td (EXPERIENCE) Tj ET
+BT /F1 10 Tf 72 618 Td (Full Stack Junior - Serfinsa \(11/2025 - Now\)) Tj ET
+BT /F1 10 Tf 84 604 Td (Web apps with Angular + Spring Boot, observability and monitoring.) Tj ET
+BT /F1 10 Tf 72 586 Td (Full Stack - Freelance \(06/2025 - 10/2025\)) Tj ET
+BT /F1 10 Tf 84 572 Td (Own multitenant SaaS: React + Spring Boot, deployed to production.) Tj ET
+BT /F1 10 Tf 72 554 Td (Monitoring Analyst - Banco Agricola \(07/2023 - 05/2025\)) Tj ET
+BT /F1 10 Tf 84 540 Td (ETL processes in Python, dashboards, monitoring with Zabbix/Grafana.) Tj ET
+BT /F1 10 Tf 72 522 Td (QA - Banco Cuscatlan \(12/2022 - 05/2023\)) Tj ET
+BT /F1 10 Tf 84 508 Td (QA for REST APIs and mobile apps in banking.) Tj ET
+BT /F1 14 Tf 72 468 Td (EDUCATION) Tj ET
+BT /F1 10 Tf 72 450 Td (Computer Systems Engineering - Universidad de El Salvador) Tj ET
+BT /F1 14 Tf 72 410 Td (SKILLS) Tj ET
+BT /F1 10 Tf 84 392 Td (Frontend: React, TypeScript, Angular) Tj ET
+BT /F1 10 Tf 84 378 Td (Backend: Spring Boot, Java, Node.js, Python) Tj ET
+BT /F1 10 Tf 84 364 Td (Databases: MySQL, Oracle, DB2, SQL) Tj ET
+BT /F1 10 Tf 84 350 Td (DevOps: Docker, Git, GitHub Actions, Grafana, OpenTelemetry) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000001788 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1858
+%%EOF
