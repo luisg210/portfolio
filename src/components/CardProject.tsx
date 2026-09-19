@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  CardMedia,
-  Stack,
-  Typography,
-} from '@mui/material';
+import { Box, Button, Card, CardContent, CardMedia, Stack, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { pick } from '@/i18n';
 import { ProjectType } from '@/data/portfolio';

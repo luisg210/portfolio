@@ -5,6 +5,8 @@ import etlsShot1 from '@/assets/screenshots/etls-1.svg';
 import etlsShot2 from '@/assets/screenshots/etls-2.svg';
 import saasShot1 from '@/assets/screenshots/saas-1.svg';
 import saasShot2 from '@/assets/screenshots/saas-2.svg';
+import felShot1 from '@/assets/screenshots/fel-1.svg';
+import felShot2 from '@/assets/screenshots/fel-2.svg';
 
 export const profile = {
   name: 'Luis Henriquez',
@@ -146,6 +148,50 @@ export const projectsDescription: ProjectType[] = [
     tech: ['Spring Boot 3', 'Java 17', 'PostgreSQL', 'JWT', 'React', 'TypeScript', 'MinIO'],
     screenshots: [tallerShot1, tallerShot2],
     links: { demo: 'https://taller-web-o9yv.onrender.com/' },
+  },
+  {
+    slug: 'fel-invoicing',
+    title: {
+      es: 'FEL — API de facturación electrónica',
+      en: 'FEL — Electronic invoicing API',
+    },
+    context: {
+      es: 'Freelance · Proyecto y servicio propios',
+      en: 'Freelance · Own project & service',
+    },
+    shortDescription: {
+      es: 'Servicio propio que construye, firma y transmite DTEs FEL de El Salvador.',
+      en: 'Own service that builds, signs and transmits El Salvador FEL DTEs.',
+    },
+    highlights: [
+      {
+        es: 'Emisión de DTEs (FACTURA, CCF, NC, ND, NR, FSE, FEX) según la Normativa de Cumplimiento DTE v2.0',
+        en: 'DTE issuance (FACTURA, CCF, NC, ND, NR, FSE, FEX) per the Normativa de Cumplimiento DTE v2.0',
+      },
+      {
+        es: 'Firma RSA-SHA256 del JSON canónico y transmisión al Ministerio de Hacienda',
+        en: 'RSA-SHA256 signature over the canonical JSON and transmission to the Ministry of Finance',
+      },
+      {
+        es: 'Auth JWT con roles y refresh tokens, límite de intentos de login, PDF con QR/PDF417 y Swagger',
+        en: 'JWT auth with roles and refresh tokens, login rate limit, QR/PDF417 PDF and Swagger',
+      },
+    ],
+    longDescription: {
+      es: 'Servicio propio: una API en Spring Boot 4 y Java 25 para la emisión de facturación electrónica FEL de El Salvador. Construye, firma, transmite y almacena documentos tributarios electrónicos (DTEs) de tipo FACTURA, CCF, NC, ND, NR, FSE y FEX siguiendo la Normativa de Cumplimiento DTE. El pipeline de emisión calcula totales con IVA 13, serializa el JSON canónico, lo firma con RSA-SHA256, lo transmite al Ministerio de Hacienda, persiste el documento con su sello y código de validación, y genera la representación PDF con QR/PDF417. Incluye autenticación JWT con jerarquía de roles y refresh tokens, límite de intentos de login, Swagger y despliegue en Docker como no-root con PostgreSQL.',
+      en: 'Own service: a Spring Boot 4 and Java 25 API for El Salvador FEL electronic invoicing. It builds, signs, transmits and stores electronic tax documents (DTEs) of types FACTURA, CCF, NC, ND, NR, FSE and FEX following the Normativa de Cumplimiento DTE. The emission pipeline computes totals with 13% VAT, serializes the canonical JSON, signs it with RSA-SHA256, transmits it to the Ministry of Finance, persists the document with its seal and validation code, and generates the PDF representation with QR/PDF417. It includes JWT auth with a role hierarchy and refresh tokens, login rate limiting, Swagger and non-root Docker deployment with PostgreSQL.',
+    },
+    tech: [
+      'Spring Boot 4',
+      'Java 25',
+      'PostgreSQL',
+      'JWT',
+      'MapStruct',
+      'OpenPDF',
+      'Docker',
+      'Swagger',
+    ],
+    screenshots: [felShot1, felShot2],
   },
   {
     slug: 'saas-pagos',
@@ -386,36 +432,65 @@ export const featuredSaas: SaasServiceType[] = [
   },
 ];
 
+export type Skill = {
+  name: string;
+  level?: Localized;
+};
+
 export type SkillsCategoryType = {
   label: Localized;
-  skills: string[];
+  skills: Skill[];
   color: 'primary' | 'secondary' | 'info' | 'success' | 'warning';
 };
 
 export const skillsCategories: SkillsCategoryType[] = [
   {
     label: { es: 'Frontend', en: 'Frontend' },
-    skills: ['React', 'TypeScript', 'Angular', 'JavaScript', 'HTML / CSS'],
+    skills: [
+      { name: 'React' },
+      { name: 'TypeScript' },
+      { name: 'Angular' },
+      { name: 'JavaScript' },
+      { name: 'HTML / CSS' },
+    ],
     color: 'primary',
   },
   {
     label: { es: 'Backend', en: 'Backend' },
-    skills: ['Spring Boot', 'Java', 'Node.js', 'Python', 'REST APIs'],
+    skills: [
+      { name: 'Spring Boot' },
+      { name: 'Java' },
+      { name: '.NET', level: { es: 'Intermedio', en: 'Intermediate' } },
+      { name: 'Node.js' },
+      { name: 'Python' },
+      { name: 'REST APIs' },
+    ],
     color: 'secondary',
   },
   {
     label: { es: 'Bases de datos', en: 'Databases' },
-    skills: ['MySQL', 'Oracle', 'DB2', 'SQL'],
+    skills: [{ name: 'MySQL' }, { name: 'Oracle' }, { name: 'DB2' }, { name: 'SQL' }],
     color: 'info',
   },
   {
     label: { es: 'Observabilidad', en: 'Observability' },
-    skills: ['Grafana', 'OpenTelemetry', 'Dynatrace', 'Zabbix'],
+    skills: [
+      { name: 'Grafana' },
+      { name: 'OpenTelemetry' },
+      { name: 'Dynatrace' },
+      { name: 'Zabbix' },
+    ],
     color: 'success',
   },
   {
     label: { es: 'DevOps y herramientas', en: 'DevOps & tools' },
-    skills: ['Docker', 'Git', 'Scrum', 'Clean Code', 'SOLID'],
+    skills: [
+      { name: 'Docker' },
+      { name: 'Git' },
+      { name: 'Scrum' },
+      { name: 'Clean Code' },
+      { name: 'SOLID' },
+    ],
     color: 'warning',
   },
 ];

@@ -18,7 +18,27 @@ export const Skills = () => {
             </Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               {cat.skills.map(skill => (
-                <Chip key={skill} label={skill} color={cat.color} variant="outlined" size="small" />
+                <Chip
+                  key={skill.name}
+                  color={cat.color}
+                  variant="outlined"
+                  size="small"
+                  label={
+                    skill.level ? (
+                      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <span>{skill.name}</span>
+                        <Typography
+                          component="span"
+                          sx={{ fontWeight: 500, opacity: 0.65, fontSize: '0.7rem', lineHeight: 1 }}
+                        >
+                          {pick(skill.level, lang)}
+                        </Typography>
+                      </Box>
+                    ) : (
+                      skill.name
+                    )
+                  }
+                />
               ))}
             </Box>
           </Box>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="hsl(190, 80%, 16%)"/>
+      <stop offset="1" stop-color="#101014"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="40" width="300" height="16" rx="8" fill="hsl(190, 90%, 45%)" opacity="0.9"/>
+  <rect x="60" y="70" width="220" height="10" rx="5" fill="#ffffff" opacity="0.18"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="60" y="150" width="235" height="230" rx="12" fill="#ffffff" opacity="0.08" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="177" y="195" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">Construir</text>
+    <text x="177" y="228" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.55">DTO + totales IVA 13</text>
+    <text x="177" y="252" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.55">número de control</text>
+    <text x="177" y="276" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.55">código de generación</text>
+    <rect x="335" y="150" width="235" height="230" rx="12" fill="#ffffff" opacity="0.08" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="452" y="195" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">Firmar</text>
+    <text x="452" y="228" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.55">JSON canónico</text>
+    <text x="452" y="252" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.55">RSA-SHA256</text>
+    <text x="452" y="276" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.55">PKCS12 emisor</text>
+    <rect x="610" y="150" width="235" height="230" rx="12" fill="#ffffff" opacity="0.08" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="727" y="195" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">Transmitir</text>
+    <text x="727" y="228" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.55">Ministerio de Hacienda</text>
+    <text x="727" y="252" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.55">selloRecibido</text>
+    <text x="727" y="276" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.55">código de validación</text>
+    <rect x="885" y="150" width="255" height="230" rx="12" fill="#ffffff" opacity="0.08" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="1012" y="195" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">Almacenar</text>
+    <text x="1012" y="228" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.55">JPA / PostgreSQL</text>
+    <text x="1012" y="252" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.55">auditoría por emisión</text>
+    <text x="1012" y="276" text-anchor="middle" font-size="15" fill="#ffffff" opacity="0.55">PDF + QR/PDF417</text>
+    <text x="300" y="290" text-anchor="middle" font-size="30" fill="hsl(190, 90%, 65%)">&#8594;</text>
+    <text x="575" y="290" text-anchor="middle" font-size="30" fill="hsl(190, 90%, 65%)">&#8594;</text>
+    <text x="850" y="290" text-anchor="middle" font-size="30" fill="hsl(190, 90%, 65%)">&#8594;</text>
+  </g>
+  <text x="600" y="556" text-anchor="middle" font-size="34" font-weight="700" fill="#ffffff">Pipeline de emisión FEL</text>
+  <text x="600" y="592" text-anchor="middle" font-size="20" fill="#ffffff" opacity="0.55">construir · firmar · transmitir · almacenar</text>
+</svg>
