@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <LanguageProvider>
       <ThemeModeProvider>
-        <BrowserRouter basename="/portfolio">
+        <BrowserRouter basename="/">
           <App />
         </BrowserRouter>
       </ThemeModeProvider>
